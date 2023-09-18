@@ -1,0 +1,228 @@
+@import url('https://fonts.cdnfonts.com/css/sf-pro-display');
+:root {
+    --azul: #38518e;
+    --amarillo: #FEB500;
+    --negro: #212121;
+    --blanco: #f3f3f3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--azul);
+    /* background-color: #496bc0; */
+}
+
+ul {
+    list-style-type: none;
+}
+
+header {
+    display: flex;
+    /* flex-direction: row; */
+    /* justify-content: center; */
+    background-color: var(--azul);
+    z-index: 3;
+}
+
+header nav {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    margin: 7px auto;
+}
+
+ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+ul a {
+    color: var(--blanco);
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    font-family: 'SF Pro Display', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+p::selection {
+    background-color: #38518e;
+    color: #FEB500;
+}
+
+ul a:hover::before {
+    width: 100%;
+}
+
+li {
+    letter-spacing: 2px;
+}
+
+section {
+    width: 80%;
+    margin: 0 auto;
+}
+
+section p {
+    font-family: 'SF Pro Display';
+    color: var(--blanco);
+    font-size: 1.7rem;
+    width: 80%;
+    margin: 30px auto;
+}
+
+h3,
+h2 {
+    color: var(--amarillo);
+}
+
+h2 {
+    font-size: 5rem;
+    margin: 20px auto;
+    width: 100%;
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-transform: uppercase;
+}
+
+h3 {
+    font-family: 'SF Pro Display', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 3rem;
+}
+
+.team {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-image: url('https://images.unsplash.com/photo-1527950510183-9112f2b9c5e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.team h1 {
+    font-size: 10rem;
+    color: var(--amarillo);
+    letter-spacing: 2px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.players-wrapper {
+    /* text-align: cneter; */
+    margin: 50px auto;
+    width: 100%;
+    display: grid;
+    justify-items: center;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.staff-wrapper {
+    margin: 50px auto;
+    width: 100%;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.player {
+    border: 4px solid var(--azul);
+    border-radius: 35px;
+    height: 450px;
+    width: 300px;
+    /* border: 1px solid red; */
+    position: relative;
+    transition: .2s all ease;
+}
+
+.player:hover {
+    border-color: var(--amarillo);
+}
+
+.player-banner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.player img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 35px;
+    aspect-ratio: 16/9;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.player-info {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    width: 100%;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #212121;
+    border-bottom-left-radius: 35px;
+    border-bottom-right-radius: 35px;
+    color: var(--blanco);
+    font-size: 1.3rem;
+    font-family: 'SF Display Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.cp {
+    background-color: var(--blanco);
+    color: var(--negro);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+    font-size: 1.5em;
+}
+
+.me {
+    text-decoration: none;
+    color: var(--negro);
+    font-family: 'New Style', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+@media (max-width: 600px) {
+    section p {
+        width: 100%;
+        font-size: 1rem;
+    }
+    .players-wrapper,
+    .staff-wrapper {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+    }
+    header nav {
+        width: 100%;
+    }
+    header a {
+        font-size: 0.8rem;
+    }
+    ul a:first-child {
+        display: none;
+    }
+    nav img {
+        width: 30%;
+    }
+    .team h1 {
+        /* background-size: auto; */
+        font-size: 4rem;
+    }
+}
